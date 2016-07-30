@@ -7,19 +7,19 @@ public class Earthquake {
 
     private String mMagnitude;
     private String mLocation;
-    private String mDate;
+    private long mTimeInMilliseconds;
 
     /**
      * Constructs a new {@link Earthquake} object
      *
      * @param magnitude magnitude of earthquake
      * @param location  location of earthquake
-     * @param date      date of earthquake
+     * @param timeInMilliseconds      timeInMilliseconds of earthquake
      */
-    public Earthquake(String magnitude, String location, String date) {
+    public Earthquake(String magnitude, String location, long timeInMilliseconds) {
         mMagnitude = magnitude;
         mLocation = location;
-        mDate = date;
+        mTimeInMilliseconds = timeInMilliseconds;
     }
 
     public String getMagnitude() {
@@ -30,7 +30,7 @@ public class Earthquake {
         return mLocation;
     }
 
-    public String getDate() {
-        return mDate;
+    public long getTimeInMilliseconds() {
+        return mTimeInMilliseconds;
     }
 }
