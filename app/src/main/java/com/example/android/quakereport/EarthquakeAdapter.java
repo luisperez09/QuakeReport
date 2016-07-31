@@ -81,12 +81,16 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         return timeFormat.format(dateObject);
     }
 
+    /**
+     * Splits original location into two sub-strings
+     * @param location original location
+     * @return array of strings containing location sub-strings
+     */
     private String[] splitLocation(String location) {
         String[] result = new String[2];
         if (location.contains(LOCATION_SEPARATOR)) {
-            int index = location.indexOf(LOCATION_SEPARATOR);
-            result[0] = location.substring(0, index + 3);
-            result[1] = location.substring(index + 4);
+            result = location.split(LOCATION_SEPARATOR);
+            result[0] = result[0] + LOCATION_SEPARATOR;
         } else {
             result[0] = getContext().getString(R.string.near_the);
             result[1] = location;
