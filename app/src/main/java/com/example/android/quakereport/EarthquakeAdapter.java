@@ -96,6 +96,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
     /**
      * Splits original location into two sub-strings
+     *
      * @param location original location
      * @return array of strings containing location sub-strings
      */
@@ -120,10 +121,10 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         return magnitudeFormat.format(magnitude);
     }
 
-    private int getMagnitudeColor(double magnitude){
+    private int getMagnitudeColor(double magnitude) {
         int magnitudeColorResourceId;
         int magnitudeFloor = (int) Math.floor(magnitude);
-        switch (magnitudeFloor){
+        switch (magnitudeFloor) {
             case 0:
             case 1:
                 magnitudeColorResourceId = R.color.magnitude1;
