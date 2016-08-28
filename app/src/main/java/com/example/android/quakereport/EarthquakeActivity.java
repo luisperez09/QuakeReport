@@ -24,6 +24,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +40,7 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
      * URL for earthquake data from the USGS dataset
      */
     private static final String USGS_REQUEST_URL =
-            "http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventtype=earthquake&orderby=time&minmag=5";
+            "http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventtype=earthquake&orderby=time&minmag=6";
     /**
      * Constant value for the earthquake loader ID. We can choose any integer.
      * This really only comes into play if you're using multiple loaders.
@@ -108,6 +109,11 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderManag
         // data set. This will trigger the ListView to update.
         if (earthquakes != null && !earthquakes.isEmpty()) {
             mAdapter.addAll(earthquakes);
+        } else {
+            // If there are no earthquake objects show empty view
+            ListView listView = (ListView) findViewById(R.id.list);
+            TextView emptyView = (TextView) findViewById(R.id.empty_view);
+            listView.setEmptyView(emptyView);
         }
     }
 

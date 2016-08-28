@@ -129,7 +129,7 @@ public final class QueryUtils {
      * Return a list of {@link Earthquake} objects that has been built up from
      * parsing a JSON response.
      */
-    public static List<Earthquake> extractFeatureFromJson(String jsonResponse) {
+    private static List<Earthquake> extractFeatureFromJson(String jsonResponse) {
         // If the JSON string is empty or null, then return early.
         if (TextUtils.isEmpty(jsonResponse)) {
             return null;
