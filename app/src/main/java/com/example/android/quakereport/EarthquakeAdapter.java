@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
@@ -26,7 +26,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
      * @param context     context of the app
      * @param earthquakes List of Earthquakes, which is the data source of the adapter
      */
-    public EarthquakeAdapter(Context context, ArrayList<Earthquake> earthquakes) {
+    public EarthquakeAdapter(Context context, List<Earthquake> earthquakes) {
         super(context, 0, earthquakes);
     }
 
