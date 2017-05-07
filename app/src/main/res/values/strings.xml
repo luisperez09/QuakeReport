@@ -12,9 +12,33 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
     <string name="app_name">Quake Report</string>
     <string name="near_the">Near the</string>
+    <!-- Localizable location example: 24KM SW of {location} -->
+    <string name="friendly_location"><xliff:g id="km">%1$s</xliff:g>KM <xliff:g id="direction">%2$s</xliff:g> of </string>
+    <string name="orientation_N">NORTH</string>
+    <string name="orientation_NE">NE</string>
+    <string name="orientation_NW">NW</string>
+    <string name="orientation_NNE">NNE</string>
+    <string name="orientation_NNW">NNW</string>
+
+
+    <string name="orientation_S">SOUTH</string>
+    <string name="orientation_SE">SE</string>
+    <string name="orientation_SW">SW</string>
+    <string name="orientation_SSE">SSE</string>
+    <string name="orientation_SSW">SSW</string>
+
+    <string name="orientation_E">EAST</string>
+    <string name="orientation_ENE">ENE</string>
+    <string name="orientation_ESE">ESE</string>
+
+    <string name="orientation_W">WEST</string>
+    <string name="orientation_WNW">WNW</string>
+    <string name="orientation_WSW">WSW</string>
+
+
     <string name="no_earthquakes">No earthquakes found.</string>
     <string name="no_internet_connection">No internet connection.</string>
     <!-- Settings Menu Item [CHAR LIMIT=NONE] -->

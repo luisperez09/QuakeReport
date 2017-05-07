@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+    <string name="app_name">Quake Report</string>
+    <string name="near_the">Cerca de</string>
+    <string name="friendly_location"><xliff:g id="km">%1$s</xliff:g>KM al <xliff:g id="direction">%2$s</xliff:g> de</string>
+    <string name="orientation_E">ESTE</string>
+    <string name="orientation_N">NORTE</string>
+    <string name="orientation_S">SUR</string>
+    <string name="orientation_W">OESTE</string>
+    <string name="no_earthquakes">No se encontraron resultados</string>
+    <string name="no_internet_connection">No hay conexión a internet</string>
+    <string name="orientation_ENE">ENE</string>
+    <string name="orientation_ESE">ESE</string>
+    <string name="orientation_NE">NE</string>
+    <string name="orientation_NNE">NNE</string>
+    <string name="orientation_NNW">NNO</string>
+    <string name="orientation_NW">NO</string>
+    <string name="orientation_SE">SE</string>
+    <string name="orientation_SSE">SSE</string>
+    <string name="orientation_SSW">SSO</string>
+    <string name="orientation_SW">SO</string>
+    <string name="orientation_WNW">ONO</string>
+    <string name="orientation_WSW">OSO</string>
+    <string name="settings_menu_item">Configuración</string>
+    <string name="settings_min_magnitude_label">Magnitud Mínima</string>
+    <string name="settings_order_by_label">Ordenar por</string>
+    <string name="settings_order_by_magnitude_label">Magnitud</string>
+    <string name="settings_order_by_most_recent_label">Más Recientes</string>
+    <string name="settings_title">Configuración</string>
+</resources>
