@@ -27,4 +27,9 @@
     <string name="settings_order_by_magnitude_label">Magnitud</string>
     <string name="settings_order_by_most_recent_label">Más Recientes</string>
     <string name="settings_title">Configuración</string>
+    <string name="about_menu_item">Acerca de esta App</string>
+    <string name="about_text">Esta App muestra información reciente de terremotos proveniente
+        de los servidores del U.S. Geological Survey (USGS). \n\nUtiliza Listviews, Loaders,
+        Custom Adapters, URL Networking y JSON Parsing
+    </string>
 </resources>

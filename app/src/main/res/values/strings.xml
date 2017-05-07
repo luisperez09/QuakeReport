@@ -43,6 +43,10 @@
     <string name="no_internet_connection">No internet connection.</string>
     <!-- Settings Menu Item [CHAR LIMIT=NONE] -->
     <string name="settings_menu_item">Settings</string>
+    <string name="about_menu_item">About this App</string>
+    <string name="about_text">This App shows recent earthquake information leveraging live data provided
+    by the U.S Geological Survey (USGS). \n\nIt utilizes Listviews, Loaders, Custom Adapters,
+        URL Networking and JSON Parsing</string>
     <!-- Settings Activity Title [CHAR LIMIT=NONE] -->
     <string name="settings_title">Earthquake Settings</string>
 
