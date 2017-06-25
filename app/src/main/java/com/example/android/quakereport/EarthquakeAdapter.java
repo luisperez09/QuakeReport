@@ -19,6 +19,7 @@ import java.util.Locale;
 public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
     public static final String LOCATION_SEPARATOR = " of ";
+    public static final String OFFSET_SEPARATOR = "km";
 
     /**
      * Constructs a new {@link EarthquakeAdapter}
@@ -82,7 +83,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
      * Return the formatted date string (i.e. "Mar 3, 1984") from a Date object.
      */
     private String formatDate(Date dateObject) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy", Locale.US);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy", Locale.getDefault());
         return dateFormat.format(dateObject);
     }
 
@@ -90,7 +91,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
      * Return the formatted date string (i.e. "4:30 PM") from a Date object.
      */
     private String formatTime(Date dateObject) {
-        SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a", Locale.US);
+        SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a", Locale.getDefault());
         return timeFormat.format(dateObject);
     }
 
@@ -104,7 +105,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         String[] result = new String[2];
         if (location.contains(LOCATION_SEPARATOR)) {
             result = location.split(LOCATION_SEPARATOR);
-            result[0] = result[0] + LOCATION_SEPARATOR;
+            result[0] = getLocalizedOffset(result[0]);
         } else {
             result[0] = getContext().getString(R.string.near_the);
             result[1] = location;
@@ -158,5 +159,68 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
                 break;
         }
         return ContextCompat.getColor(getContext(), magnitudeColorResourceId);
+    }
+
+    /**
+     * Localizes Offset distance and orientation (43km WNW of..)
+     * This method ony gets called when the offset string contains "of"
+     *
+     * @param offsetString String of the distance and direction offset
+     * @return Localized offset according to available locales in the app
+     */
+    private String getLocalizedOffset(String offsetString) {
+        if (offsetString.contains(OFFSET_SEPARATOR)) {
+            String[] offsetParts = new String[2];
+            offsetParts = offsetString.split(OFFSET_SEPARATOR);
+            String km = offsetParts[0];
+            String direction = getLocalizedDirection(offsetParts[1]);
+            return getContext().getString(R.string.friendly_location, km, direction);
+        }
+        // if string contains "of" but not "km" return original offset string in english
+        return offsetString + LOCATION_SEPARATOR;
+    }
+
+    /**
+     * Localizes earthquake direction according to available locales
+     *
+     * @param direction The direction in english
+     * @return The localized direction if available in app
+     */
+    private String getLocalizedDirection(String direction) {
+        switch (direction) {
+            case " N":
+                return getContext().getString(R.string.orientation_N);
+            case " NE":
+                return getContext().getString(R.string.orientation_NE);
+            case " NW":
+                return getContext().getString(R.string.orientation_NW);
+            case " NNE":
+                return getContext().getString(R.string.orientation_NNE);
+            case " NNW":
+                return getContext().getString(R.string.orientation_N);
+            case " S":
+                return getContext().getString(R.string.orientation_S);
+            case " SE":
+                return getContext().getString(R.string.orientation_SE);
+            case " SW":
+                return getContext().getString(R.string.orientation_SW);
+            case " SSE":
+                return getContext().getString(R.string.orientation_SSE);
+            case " SSW":
+                return getContext().getString(R.string.orientation_SSW);
+            case " E":
+                return getContext().getString(R.string.orientation_E);
+            case " ENE":
+                return getContext().getString(R.string.orientation_ENE);
+            case " ESE":
+                return getContext().getString(R.string.orientation_ESE);
+            case " W":
+                return getContext().getString(R.string.orientation_W);
+            case " WNW":
+                return getContext().getString(R.string.orientation_WNW);
+            case " WSW":
+                return getContext().getString(R.string.orientation_WSW);
+        }
+        return direction;
     }
 }
